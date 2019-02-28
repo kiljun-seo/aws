@@ -1,13 +1,12 @@
 version: 0.2
 
-#env:
-  #variables:
+# env:
+  # variables:
      # key: "value"
      # key: "value"
   #parameter-store:
      # key: "value"
      # key: "value"
-
 phases:
   install:
     commands:
@@ -22,15 +21,14 @@ phases:
       # - command
   post_build:
     commands:
-      #  - command
-      # - command
-artifacts:
-  files:
-    - dist
+      - ls -al
+      - aws s3 cp --recursive dist/ s3://devhaks-sample-s3
+# artifacts:
+  # files:
     # - location
   #name: $(date +%Y-%m-%d)
-  #discard-paths: yes
-  #base-directory: location
+  # discard-paths: no
+  # base-directory: dist
 #cache:
   #paths:
     # - paths
