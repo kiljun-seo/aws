@@ -22,7 +22,6 @@ phases:
   post_build:
     commands:
       - ls -al
-      - aws s3 cp --recursive dist/ s3://devhaks-sample-s3
 # artifacts:
   # files:
     # - location
