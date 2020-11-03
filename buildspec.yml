@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+install:
+  commands:
+    - npm install
+pre_build:
+  commands:
+    - npm run lint
+    # - command
+build:
+  commands:
+    - npm run build
+    # - command
+post_build:
+  commands:
+    - ls -al
+    - aws s3 cp --recursive dist/ s3://codingeverydody2
